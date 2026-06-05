@@ -44,7 +44,8 @@ def deposit_money(self, account_number, amount):
 
     return False
 
-def withdraw_money(self, account_number,amount):
+
+def withdraw_money(self, account_number, amount):
 
     account = self.find_account(account_number)
 
@@ -54,6 +55,7 @@ def withdraw_money(self, account_number,amount):
 
     return None
 
+
 def check_balance(self, account_number):
     account = self.find_account(account_number)
 
@@ -61,4 +63,3 @@ def check_balance(self, account_number):
         return account.get_balance()
 
     return None
-    
