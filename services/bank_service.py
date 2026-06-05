@@ -17,3 +17,6 @@ class bankservices:
 self.account.append(account)
 
 return account
+
+def get_all_accounts(self):
+    return self.accounts
