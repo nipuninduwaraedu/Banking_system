@@ -11,7 +11,8 @@ while True:
     print("3.Deposite money")
     print("4.Withdraw Money")
     print("5.Check balance")
-    print("6.Exit")
+    print("6.Delete Account")
+    print("7.Exit")
 
     choice = input("Enter your choice: ")
 
@@ -89,6 +90,24 @@ while True:
             print("Invalid input!")
 
     elif choice == "6":
+        try:
+            account_number = int(
+                input("Enter account number: ")
+            )
+
+            success = bank_service.delete_account(
+                account_number
+            )
+
+            if success:
+                print("Account Deleted Successfully")
+            else:
+                print("Account Not Found")
+
+        except ValueError:
+            print("Invalid input!")
+
+    elif choice == "7":
 
         print("Program closed")
         break
