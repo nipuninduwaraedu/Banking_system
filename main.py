@@ -10,7 +10,8 @@ while True:
     print("2.View All Accounts")
     print("3.Deposite money")
     print("4.Withdraw Money")
-    print("5.Exit")
+    print("5.Check balance")
+    print("6.Exit")
 
     choice = input("Enter your choice: ")
 
@@ -75,6 +76,19 @@ while True:
         except ValueError:
             print("Invalid input!")
     elif choice == "5":
+        try:
+            account_number = int(input("Enter account number: "))
+
+            balance = bank_service.check_balance(account_number)
+
+            if balance is not None:
+                print(f"Current Balance: {balance:.2f}")
+            else:
+                print("Account Not Found")
+        except ValueError:
+            print("Invalid input!")
+
+    elif choice == "6":
 
         print("Program closed")
         break
