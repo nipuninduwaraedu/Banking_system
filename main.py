@@ -29,6 +29,7 @@ while True:
                 customer_name,
                 balance
             )
+            bank_service.save_accounts()
 
             print("\nAccount created successfully")
             print(account.display_account())
@@ -55,6 +56,7 @@ while True:
             )
 
             if success:
+                bank_service.save_accounts()
                 print("Deposit successful")
             else:
                 print("Account not found")
@@ -71,6 +73,7 @@ while True:
             )
 
             if result is True:
+                bank_service.save_accounts()
                 print("Withdrawal Successful")
             elif result is False:
                 print("Insufficient Balance")
@@ -102,6 +105,7 @@ while True:
             )
 
             if success:
+                bank_service.save_accounts()
                 print("Account Deleted Successfully")
             else:
                 print("Account Not Found")
