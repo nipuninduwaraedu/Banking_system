@@ -18,5 +18,28 @@ self.account.append(account)
 
 return account
 
+
 def get_all_accounts(self):
     return self.accounts
+
+
+def find_account(self, account_number):
+
+    for account in self.account:
+
+        if account.account_number == account_number:
+            return account
+
+        return None
+
+
+def deposit_money(self, account_number, amount):
+    account = self.find_account(account_number)
+
+    if account is not None:
+
+        account.deposit(amount)
+
+        return True
+
+    return False
