@@ -8,7 +8,8 @@ while True:
 
     print("1.Create Account")
     print("2.View All Accounts")
-    print("3.Exit")
+    print("3.Deposite money")
+    print("4.Exit")
 
     choice = input("Enter your choice: ")
 
@@ -39,6 +40,36 @@ while True:
                 print(account.display_account())
                 print("_" * 30)
     elif choice == "3":
+
+        try:
+
+            account_number = int(
+                input("Enter account number: ")
+
+            )
+
+            amount = float(
+                input("Enter deposit amount: ")
+            )
+
+            sucess = bank_service.deposit_money(
+                account_number,
+                amount
+            )
+
+            if sucess:
+
+                print("Deposite successful")
+
+            else:
+
+                print("Account not found")
+
+        except ValueError:
+
+            print("Inavlid input !")
+    elif choice == "4":
+
         print("Program closed")
         break
     else:
