@@ -2,6 +2,8 @@ from services.bank_service import bankservices
 
 bank_service = bankservices()
 
+bank_service.load_accounts()
+
 while True:
 
     print("\n===== Banking System =====")
