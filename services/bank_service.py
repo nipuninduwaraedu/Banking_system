@@ -63,3 +63,15 @@ def check_balance(self, account_number):
         return account.get_balance()
 
     return None
+
+def delete_account(self, account_number):
+
+    account = self.find_account(account_number)
+
+    if account is not None:
+
+        self.accounts.remove(account)
+
+        return True
+
+    return False
