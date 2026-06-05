@@ -43,3 +43,13 @@ def deposit_money(self, account_number, amount):
         return True
 
     return False
+
+def withdraw_money(self, account_number,amount):
+
+    account = self.find_account(account_number)
+
+    if account is not None:
+
+        return account.withdraw(amount)
+
+    return None
