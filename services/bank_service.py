@@ -75,3 +75,45 @@ def delete_account(self, account_number):
         return True
 
     return False
+
+def save_accounts(self):
+
+    with open("data/accounts.txt", "w") as file:
+
+        for account in self.accounts:
+
+            line = (
+                f"{account.account_number},"
+                f"{account.customer_name},"
+                f"{account.balance}\n"
+            )
+
+            file.write(line)
+
+def load_accounts(self):
+
+    try:
+
+        with open("data/accounts.txt", "r") as file:
+
+            lines = file.readlines()
+
+            for line in lines:
+
+                data = line.strip().split(",")
+
+                account_number = int(data[0])
+                customer_name = data[1]
+                balance = float(data[2])
+
+                account = BankAccount(
+                    account_number,
+                    customer_name,
+                    balance
+                )
+
+                self.accounts.append(account)
+
+    except FileNotFoundError:
+
+        pass
