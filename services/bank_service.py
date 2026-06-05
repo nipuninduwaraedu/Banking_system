@@ -53,3 +53,12 @@ def withdraw_money(self, account_number,amount):
         return account.withdraw(amount)
 
     return None
+
+def check_balance(self, account_number):
+    account = self.find_account(account_number)
+
+    if account is not None:
+        return account.get_balance()
+
+    return None
+    
